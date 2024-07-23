@@ -3,6 +3,11 @@
     $world = $_POST['world'];
     $text = $_POST['text'];
 
+    $new_text = str_replace($world, '***', $text);
+
+    $text_lenght = strlen($text);
+    $new_text_lenght = strlen($new_text);
+
 ?>
 
 
@@ -16,8 +21,11 @@
 </head>
 <body>
     
-    <span>La tua parola è: <?php echo $world ?></span>
     <p>Il tuo testo è: <?php echo $text ?> </p>
+    <span>Contiene <?php echo $text_lenght ?> caratteri</span>
+
+    <p>Il nuovo testo è: <?php echo $new_text ?> </p>
+    <span>Contiene <?php echo $new_text_lenght ?>caratteri</span>
 
 </body>
 </html>
